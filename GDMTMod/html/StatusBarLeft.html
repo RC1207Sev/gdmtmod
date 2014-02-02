@@ -14,13 +14,18 @@
     margin-right:10px; 
     width:400px;  
 }
+
+input { 
+    width:auto;  
+}
+
 #status { 
     width:88px; 
     display:block; 
     float:left; 
     margin-top:15px; 
 }
-#chat {
+#StartPanel {
     width:100%; 
     height:100%;
 }
@@ -37,12 +42,12 @@
   <script src="./mods/GDMTMod/html/jquery-ui.js"></script>
   
 
-<div id="statusBarCustomized" class="statusBar statusBarRight staffItemBorder ui-draggable ui-widget-content" style="pointer-events: all; height: 270px; background-color: rgba(255, 255, 255, 0.498);">
+<div id="multiTycoonPanel" class="statusBar statusBarRight staffItemBorder ui-draggable ui-widget-content" style="pointer-events: all; height: 270px; background-color: rgba(255, 255, 255, 0.498);">
 <table border="0" cellpadding="0" cellspacing="0" style="text-align: right; background-color: rgba(255, 255, 255, 0.498039); width: 100%;">
 				<tbody>
 					<tr>
 						<td style="text-align: left; font-size: 12px;">
-							<strong id="chatBoxTitle">Game Dev Multi Tycoons Mod</strong></td>
+							<strong id="chatBoxTitle">Multi Tycoons Mod</strong></td>
 						<td>
 							<input alt="close" id="b_minimize" src="./mods/ChatMod/html/img/minimize.png" style="width: 25px; height: 25px; " type="image" />
 							<input alt="close" id="b_maximize" src="./mods/ChatMod/html/img/maxwindow.png" style="width: 25px; height: 25px;" type="image" />
@@ -50,10 +55,33 @@
 					</tr>
 				</tbody>
 			</table>
-	<div id="chat" >
-		<div id="StartPanel" style="text-align: center;" >
-			<div style="margin: 10pt;"><input type="submit" value="Create New Game" /></div>
-			<div style="margin: 10pt;"><input type="submit" value="Join Game" /></div>
+	<div id="StartPanel" >
+		<div style="text-align: center;" >
+			<div id="b_create_new_game" style="margin: 10pt;"><input type="submit" style="width: 90%;" value="Create New Game" /></div>
+			<div id="b_join_game" style="margin: 10pt;"><input type="submit" style="width: 90%;" value="Join Game" /></div>
+		</div>
+	</div>
+	<div id="CreatePanel" style="text-align: center;">
+		<div><strong><span style="font-size: large;">Create new Game</span></strong></div>
+		<div style="margin-top: 10pt;">Room Name</div>
+		<input type="text" style="text-align: center;" onclick="this.focus()" name="GameName" value="Custom Game" />
+		<div style="margin-top: 10pt;">Game Mode</div>
+		<table style="text-align: right; background-color: rgba(255, 255, 255, 0.498039); width: 100%;" border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr>
+					<td style="text-align: left; font-size: 12px; width: 20%;"></td>
+					<td style="text-align: left; font-size: 12px;"> 
+						<input type="radio" name="preferred_color" value="Red" />5 Years, blody 5 Years<br />
+						<input type="radio" name="preferred_color" value="Blue" />Best Reviews<br />
+						<input type="radio" name="preferred_color" value="Green" />Highlanders<br />
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="margin: 20pt; display:inline-block;">
+			<input id="b_create_back" type="submit" value="Back" />
+			<input id="b_create" type="submit" value="Create" />
 		</div>
 	</div>
 </div>

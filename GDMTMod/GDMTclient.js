@@ -1,9 +1,9 @@
-var Chatclient = {};
+var GDMTclient = {};
 (function () {
     "use strict";
  
-	// ChatMod Version
-	var ChatModVersion = "0.3";
+	// GDMT Version
+	var GDMTModVersion = "0.1";
  
     // for better performance - to avoid searching in DOM
     var content;
@@ -19,7 +19,7 @@ var Chatclient = {};
     // check if already initialized
     var isInit = false;
  
-    Chatclient.changeName = function (name){
+    GDMTclient.changeName = function (name){
     	
 		if (("Zeratul - Admin" == name) || ("fabfor - Admin" == name)) {
 		
@@ -38,14 +38,14 @@ var Chatclient = {};
     };
     
     // It initializes 
-    Chatclient.init = function () {
+    GDMTclient.init = function () {
     	
     	
         content = $('#contentmodchat');
         input = $('#input');
 		
 		
-		$('#chatBoxTitle').text("ChatMod v " + ChatModVersion);
+		$('#chatBoxTitle').text("Multi Tycoons Mod v " + GDMTModVersion);
 		
         // get chromium websocket
         window.WebSocket = window.WebSocket;
@@ -202,12 +202,12 @@ var Chatclient = {};
 
         	// if the status bar is not already maximized
         	if (2 != statusBarSize){
-        		$('#statusBarCustomized').css("width", largeSizes.width + "%").css("height",largeSizes.height + "px");
+        		$('#multiTycoonPanel').css("width", largeSizes.width + "%").css("height",largeSizes.height + "px");
         		$('#contentmodchat').css("height",(largeSizes.height - 70) + "px");
 				$('#chat').show();
         		statusBarSize = 2;
         	}else{  // else it will return in the default state
-        		$('#statusBarCustomized').css("width",normalSizes.width + "%").css("height",normalSizes.height + "px");
+        		$('#multiTycoonPanel').css("width",normalSizes.width + "%").css("height",normalSizes.height + "px");
         		$('#contentmodchat').css("height",(normalSizes.height - 70) + "px");
         		statusBarSize = 1;
         	}
@@ -224,11 +224,11 @@ var Chatclient = {};
         	// if the status bar is not already minimized
         	if (0 != statusBarSize){
         		$('#chat').hide();
-        		$('#statusBarCustomized').css("width", minimizedSizes.width + "%").css("height",minimizedSizes.height + "px");
+        		$('#multiTycoonPanel').css("width", minimizedSizes.width + "%").css("height",minimizedSizes.height + "px");
         		statusBarSize = 0;
         	}else{  // else it will return in the default state
         		$('#chat').show();
-        		$('#statusBarCustomized').css("width",normalSizes.width + "%").css("height",normalSizes.height + "px");
+        		$('#multiTycoonPanel').css("width",normalSizes.width + "%").css("height",normalSizes.height + "px");
         		statusBarSize = 1;
         	}
         	content.scrollTop(10000000);
@@ -243,7 +243,7 @@ var Chatclient = {};
         	// correctly close the websocket
         	connection.onclose = function () {}; // disable onclose handler first
         	connection.close();
-        	$('#statusBarCustomized').remove();	
+        	$('#multiTycoonPanel').remove();	
 
         });
 
