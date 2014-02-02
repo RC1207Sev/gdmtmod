@@ -1,11 +1,11 @@
 ﻿{
-	"id" : "Chat Mod",
-	"name" : "Chat Mod",
-	"version":"0.1S",
+	"id" : "Game Dev Multi Tycoons Mod",
+	"name" : "Game Dev Multi Tycoons Mod",
+	"version":"0.3",
 	"author":"gdtchatmod@gmail.com",
 	"url":"http://gdtchatmod.bugs3.com/",
-	"description" : "This Mod will add a chatbox on the left side of the window",
-	"main" : "./ChatMod.js",
+	"description" : "This Mod will connect you to a multiplayer server allowing you to create or join other Tycoons games",
+	"main" : "./GDMTMod.js",
 		"dependencies" : {
 	}
 }
